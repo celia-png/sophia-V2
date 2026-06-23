@@ -6,18 +6,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let isPlaying = false;
 
     btnVoice.addEventListener('click', () => {
-        if (isPlaying) return; // Evita cliques múltiplos
+        if (isPlaying) return; 
 
-        // Efeito visual no botão
         btnVoice.classList.add('playing');
         btnVoice.innerHTML = '<span class="icon">🔊</span> Reproduzindo...';
         isPlaying = true;
 
-        // Tenta tocar o arquivo de áudio. Se não existir, usa a Síntese de Voz do Navegador como fallback
+        // Tenta tocar o arquivo 'audio.mp3'. Se não achar, usa a voz do sistema.
         audioElement.play().catch(error => {
-            console.log('Arquivo de áudio não encontrado. Usando Web Speech API como fallback.');
+            console.log('Arquivo de áudio não encontrado. Usando síntese de voz nativa.');
             
-            const speech = new SpeechSynthesisUtterance("Olá, candidato. Eu sou a Sofia. Vou seguir com a sua entrevista.");
+            const speech = new SpeechSynthesisUtterance("Olá! Eu sou a Sofia e vou conduzir sua entrevista agora.");
             speech.lang = 'pt-BR';
             speech.rate = 1.0;
             
@@ -48,13 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateCarousel() {
         const cardsVisible = getCardsVisible();
-        const totalCards = document.querySelectorAll('.testimonial-card').length;
-        const maxIndex = Math.max(0, totalCards - cardsVisible);
+        const cards = document.querySelectorAll('.testimonial-card');
+        const maxIndex = Math.max(0, cards.length - cardsVisible);
 
-        // Garante que o index não passe do limite ao redimensionar a tela
         if (currentIndex > maxIndex) currentIndex = maxIndex;
 
-        const cardWidth = document.querySelector('.testimonial-card').offsetWidth;
+        const cardWidth = cards[0].offsetWidth;
         const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
         
         const moveAmount = currentIndex * (cardWidth + gap);
@@ -78,11 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('resize', updateCarousel);
 
-    // 3. Lógica de ScrollReveal (Intersection Observer)
+    // 3. Efeitos de Fade-in no Scroll (Lazy Loading visual)
     const observerOptions = {
         root: null,
         rootMargin: '0px',
-        threshold: 0.15
+        threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries, observer) => {
@@ -93,6 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+});
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 });
