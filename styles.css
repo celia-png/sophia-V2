@@ -196,5 +196,3 @@ h2 span { color: var(--primary-cyan); }
 @media (min-width: 1024px) {
     .testimonial-card { min-width: calc(33.333% - 1rem); }
 }
-    .testimonial-card { min-width: calc(33.333% - 1rem); }
-}
