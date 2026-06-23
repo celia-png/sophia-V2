@@ -3,75 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-width=1.0">
-    <meta name="description" content="SophIA - Inteligência Artificial para entrevistas por voz e triagem comportamental.">
-    <title>SophIA | Contratações Precisas</title>
+    <meta name="description" content="Transforme sua triagem com a IA que entrevista pessoas de verdade.">
+    <title>SophIA | Contratações Inteligentes</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="navbar">
-        <div class="logo">
-            <span class="logo-text">Soph<strong>IA</strong></span>
+        <div class="container nav-content">
+            <div class="logo">
+                <span class="logo-text">Soph<strong>IA</strong></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#funcionalidades">Funcionalidades</a></li>
+                <li><a href="#como-funciona">Como funciona</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#depoimentos">Depoimentos</a></li>
+            </ul>
+            <a href="#contato" class="btn btn-outline">Fale com um especialista</a>
         </div>
-        <a href="#contato" class="btn btn-outline">Fale Conosco</a>
     </nav>
 
     <header class="hero">
-        <div class="hero-content fade-in">
-            <span class="badge">Inteligência Artificial para RH</span>
-            <h1>O erro na contratação é o custo mais silencioso da sua operação.</h1>
-            <p>Conheça a SophIA. Ela realiza entrevistas por voz em tempo real e mapeamento comportamental (CORE10), cruzando esses dados com o currículo. O objetivo? Agilizar o processo e entregar um Score preciso para deixar na mão do seu RH a decisão final com confiança.</p>
-            <div class="hero-actions">
-                <a href="#demonstracao" class="btn btn-primary">Solicitar Demonstração</a>
-                <a href="#portal" class="btn btn-secondary">Acessar Portal de Vagas</a>
+        <div class="container hero-grid">
+            <div class="hero-text fade-in">
+                <div class="badge">
+                    <span class="dot"></span> ENTREVISTAS ACONTECENDO AGORA
+                </div>
+                <h1>Transforme sua triagem com a <span>IA que entrevista pessoas de verdade.</span></h1>
+                <p>A SophIA conduz entrevistas por voz, fluidas e humanizadas. Analisa, ranqueia e entrega ao RH os melhores candidatos para você escolher com confiança.</p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">Solicitar demonstração ➔</a>
+                    <a href="https://youtu.be/60or_aHQ5p8" target="_blank" rel="noopener noreferrer" class="btn btn-transparent">► Ver como funciona</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image fade-in">
-            <img src="image_37183c.png" alt="Avatar da SophIA" class="avatar-img" loading="lazy">
-            <div class="chat-bubble">
-                Olá! Eu sou a <strong>SophIA</strong> e vou conduzir sua entrevista agora. 😊
+            <div class="hero-visual fade-in delay-1">
+                <div class="avatar-container">
+                    <img src="avatar-sophia.png" alt="Avatar SophIA" class="avatar" loading="lazy" onerror="this.src='https://via.placeholder.com/400x500/130a2c/ffffff?text=Avatar+SophIA'">
+                    <div class="chat-bubble float-anim">
+                        Olá! Eu sou a <strong>SophIA</strong> e vou conduzir sua entrevista agora. 😊
+                    </div>
+                </div>
+                <div class="voice-controls">
+                    <button id="btn-voice" class="btn-voice">
+                        <span class="icon">🔊</span> Entrevistas por voz
+                    </button>
+                </div>
             </div>
         </div>
     </header>
 
-    <section class="features" id="diferenciais">
-        <div class="feature-card fade-in">
-            <div class="icon">🎙️</div>
-            <h3>Entrevista por Voz</h3>
-            <p>Conduzimos conversas humanizadas em tempo real. A IA interage de acordo com as respostas do candidato.</p>
-        </div>
-        <div class="feature-card fade-in">
-            <div class="icon">🧠</div>
-            <h3>Análise Comportamental</h3>
-            <p>Mapeamento CORE10 integrado. Entenda o perfil comportamental de cada talento já na primeira etapa.</p>
-        </div>
-        <div class="feature-card fade-in">
-            <div class="icon">📊</div>
-            <h3>Decisão do RH</h3>
-            <p>Avaliamos o fit cultural e cruzamos dados da entrevista com o currículo. O RH recebe um Score para focar apenas nos melhores.</p>
+    <section class="context-section container fade-in">
+        <h2>O currículo está perdendo a relevância. A <br><strong>SophIA escuta pessoas de verdade.</strong></h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>88%</h3>
+                <p>dos candidatos qualificados são rejeitados por filtros artificiais de ATS</p>
+            </div>
+            <div class="stat-card">
+                <h3>2.000%</h3>
+                <p>de crescimento em currículos feitos com IA desde 2023</p>
+            </div>
+            <div class="stat-card">
+                <h3>70%</h3>
+                <p>dos candidatos admitem inflar informações no currículo</p>
+            </div>
         </div>
     </section>
 
-    <section class="stats">
-        <div class="stat-item fade-in">
-            <h2>9.2</h2>
-            <p>NPS dos Candidatos</p>
-        </div>
-        <div class="stat-item fade-in">
-            <h2>75%</h2>
-            <p>Economia de Tempo</p>
-        </div>
-        <div class="stat-item fade-in">
-            <h2>5x</h2>
-            <p>Mais Agilidade</p>
+    <section id="depoimentos" class="testimonials-section container fade-in">
+        <h2>O que dizem sobre a <strong>SophIA</strong></h2>
+        <p class="subtitle">Aprovada por quem mais importa: candidatos e líderes de RH.</p>
+        
+        <div class="carousel-container">
+            <div class="carousel-track" id="carousel-track">
+                <div class="testimonial-card">
+                    <span class="quote-icon">❝</span>
+                    <p>"Padronização total a zero viés. A análise comportamental já na triagem é um divisor de águas."</p>
+                    <div class="author"><strong>Patrícia Souza</strong> - Gerente de Talentos</div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="quote-icon">❝</span>
+                    <p>"Disponível 24/7, entrevista qualquer volume. Nosso turnover caiu de forma significativa."</p>
+                    <div class="author"><strong>Marcos Lima</strong> - Diretor de RH</div>
+                </div>
+                <div class="testimonial-card">
+                    <span class="quote-icon">❝</span>
+                    <p>"A SophIA mudou completamente nossa triagem. Conseguimos entrevistar volumes que antes eram impossíveis."</p>
+                    <div class="author"><strong>Cristiane Marangner</strong> - Diretora de Recrutamento</div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button id="prev-btn" class="carousel-btn">❮</button>
+                <button id="next-btn" class="carousel-btn">❯</button>
+            </div>
         </div>
     </section>
 
     <footer class="footer">
-        <p>&copy; 2026 StarMind. Todos os direitos reservados. Em conformidade com a LGPD Avançada.</p>
+        <div class="container">
+            <h2>Deixe a <strong>SophIA</strong> entrevistar por você.</h2>
+            <p>Experimente a transformação do recrutamento inteligente. Junte-se às empresas que já contratam com mais inteligência, menos viés e melhores resultados.</p>
+            <div class="footer-buttons">
+                <a href="#demo" class="btn btn-primary">Agendar demonstração gratuita ➔</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 StarMind. Todos os direitos reservados. Compliance com LGPD Avançada.</p>
+            </div>
+        </div>
     </footer>
+
+    <audio id="sophia-audio" src="sophia-voice.mp3" preload="auto"></audio>
 
     <script src="script.js" defer></script>
 </body>
