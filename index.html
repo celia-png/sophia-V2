@@ -26,6 +26,7 @@
         </div>
     </nav>
 
+    <!-- HERO SECTION -->
     <header class="hero container">
         <div class="hero-grid">
             <div class="hero-text fade-in">
@@ -41,7 +42,8 @@
             </div>
             <div class="hero-visual fade-in delay-1">
                 <div class="avatar-container">
-                    <img src="avatar.png" alt="Avatar SophIA" class="avatar" loading="lazy">
+                    <!-- Placeholder automático caso falte o avatar.png -->
+                    <img src="avatar.png" alt="Avatar da SophIA" class="avatar" loading="lazy" onerror="this.onerror=null; this.src='https://via.placeholder.com/400x500/130a2c/00e5ff?text=Avatar+SophIA'">
                     <div class="chat-bubble float-anim">
                         Olá! Eu sou a <strong>SophIA</strong> e vou conduzir sua entrevista agora. 😊
                     </div>
@@ -55,6 +57,7 @@
         </div>
     </header>
 
+    <!-- CONTEXTO -->
     <section class="context-section container fade-in">
         <h2>O currículo está perdendo a relevância. A <br><span>SophIA escuta pessoas de verdade.</span></h2>
         <p class="subtitle">O relatório Gartner 2026 aponta a IA como alternativa altamente viável ao talento humano na triagem. A McKinsey recomenda substituir a triagem de currículos por avaliações automatizadas. Google, IBM, Microsoft e Accenture já adotaram hiring baseado em habilidades.</p>
@@ -78,6 +81,7 @@
         </div>
     </section>
 
+    <!-- FUNCIONALIDADES -->
     <section id="funcionalidades" class="features-section container fade-in">
         <h2>Pare de triar currículos. <span>Comece a triar pessoas.</span></h2>
         <p class="subtitle">Uma parceira inteligente do RH que conduz entrevistas humanizadas por voz e entrega análise completa de cada candidato.</p>
@@ -136,6 +140,7 @@
         </div>
     </section>
 
+    <!-- 5 PASSOS -->
     <section id="como-funciona" class="steps-section container fade-in">
         <h2>Em 5 passos simples, você <br><span>transforma sua triagem.</span></h2>
         
@@ -168,6 +173,7 @@
         </div>
     </section>
 
+    <!-- CORE10 -->
     <section class="core10-section container fade-in">
         <div class="core10-content">
             <span class="badge">CORE10®</span>
@@ -195,6 +201,7 @@
         </div>
     </section>
 
+    <!-- RESULTADOS REAIS -->
     <section id="resultados" class="results-section container fade-in">
         <h2>Resultados reais para empresas <br><span>que contratam com a SophIA.</span></h2>
         
@@ -218,45 +225,74 @@
         </div>
     </section>
 
+    <!-- LOGOS DE CLIENTES -->
+    <section class="clients-section container fade-in">
+        <h2>Empresas de diversos segmentos já <span>recrutam com a SophIA.</span></h2>
+        <div class="clients-grid">
+            <img src="logo-eletronet.png" alt="Eletronet" class="client-logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/130a2c/00e5ff?text=Eletronet'">
+            <img src="logo-algar.png" alt="Algar Telecom" class="client-logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/130a2c/00e5ff?text=Algar'">
+            <img src="logo-votorantim.png" alt="Grupo Votorantim" class="client-logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/130a2c/00e5ff?text=Votorantim'">
+            <img src="logo-mahle.png" alt="Mahle" class="client-logo" onerror="this.onerror=null; this.src='https://via.placeholder.com/150x50/130a2c/00e5ff?text=Mahle'">
+        </div>
+    </section>
+
+    <!-- CARROSSEL DE DEPOIMENTOS -->
     <section id="depoimentos" class="testimonials-section container fade-in">
         <h2>O que dizem sobre a <span>SophIA</span></h2>
         <p class="subtitle">Aprovada por quem mais importa: candidatos e líderes de RH.</p>
         
         <div class="carousel-container">
             <div class="carousel-track" id="carousel-track">
+                
                 <div class="testimonial-card">
                     <span class="quote-icon">❝</span>
                     <p>"Padronização total e zero viés. A análise comportamental já na triagem é um divisor de águas."</p>
                     <div class="author">
-                        <div class="author-avatar">P</div>
+                        <img src="foto-patricia.jpg" alt="Patrícia Souza" class="avatar-img-round" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Patricia+Souza&background=130a2c&color=00e5ff'">
                         <div>
                             <strong>Patrícia Souza</strong>
                             <span>Gerente de Talentos - Saúde</span>
                         </div>
                     </div>
                 </div>
+                
                 <div class="testimonial-card">
                     <span class="quote-icon">❝</span>
                     <p>"Disponível 24/7, entrevista qualquer volume. Nosso turnover caiu de forma significativa."</p>
                     <div class="author">
-                        <div class="author-avatar">M</div>
+                        <img src="foto-marcos.jpg" alt="Marcos Lima" class="avatar-img-round" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Marcos+Lima&background=130a2c&color=00e5ff'">
                         <div>
                             <strong>Marcos Lima</strong>
                             <span>Diretor de RH - Indústria</span>
                         </div>
                     </div>
                 </div>
+
+                <!-- Depoimento do Marcelo Adicionado -->
+                <div class="testimonial-card">
+                    <span class="quote-icon">❝</span>
+                    <p>"Depois que fomos reconhecidos pelo GPTW, recebemos mais de 1.200 currículos em apenas um mês. Com a ajuda da SOPHIA, economizei tempo, recursos e energia. Foi uma virada de chave, com precisão e agilidade."</p>
+                    <div class="author">
+                        <img src="foto-marcelo.jpg" alt="Marcelo Menino" class="avatar-img-round" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Marcelo+Menino&background=130a2c&color=00e5ff'">
+                        <div>
+                            <strong>Marcelo Menino</strong>
+                            <span>Sócio-proprietário, Fleming Laboratórios</span>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="testimonial-card">
                     <span class="quote-icon">❝</span>
                     <p>"A SophIA mudou completamente nossa triagem. Conseguimos entrevistar volumes que antes eram impossíveis, com qualidade e padronização."</p>
                     <div class="author">
-                        <div class="author-avatar">C</div>
+                        <img src="foto-cristiane.jpg" alt="Cristiane Marangner" class="avatar-img-round" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Cristiane+Marangner&background=130a2c&color=00e5ff'">
                         <div>
                             <strong>Cristiane Marangner</strong>
                             <span>Diretora de Recrutamento</span>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="carousel-controls">
                 <button id="prev-btn" class="carousel-btn">❮</button>
@@ -265,13 +301,14 @@
         </div>
     </section>
 
+    <!-- FOUNDERS -->
     <section class="founders-section container fade-in">
         <h2>O que há por trás da <span>SophIA</span></h2>
         <p class="subtitle">A SophIA foi desenvolvida pela <strong>StarMind</strong>, uma empresa de tecnologia com a missão de transformar pessoas e negócios através da inteligência artificial.</p>
         
         <div class="founders-grid">
             <div class="founder-card">
-                <div class="f-avatar">IG</div>
+                <img src="foto-ivan.jpg" alt="Ivan H. Gonçalves" class="avatar-img-round large" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ivan+Gonçalves&background=130a2c&color=00e5ff'">
                 <div>
                     <h4>Ivan H. Gonçalves</h4>
                     <span>Founder e Conselheiro</span>
@@ -279,7 +316,7 @@
                 </div>
             </div>
             <div class="founder-card">
-                <div class="f-avatar">AS</div>
+                <img src="foto-augusto.jpg" alt="Augusto Salomon" class="avatar-img-round large" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Augusto+Salomon&background=130a2c&color=00e5ff'">
                 <div>
                     <h4>Augusto Salomon</h4>
                     <span>Founder e Conselheiro</span>
@@ -289,6 +326,7 @@
         </div>
     </section>
 
+    <!-- FOOTER CTA -->
     <footer class="footer">
         <div class="container fade-in">
             <h2>Deixe a <span>SophIA</span> entrevistar por você.</h2>
@@ -304,6 +342,7 @@
         </div>
     </footer>
 
+    <!-- O ARQUIVO audio.mp3 DEVE ESTAR NA MESMA PASTA -->
     <audio id="sophia-audio" src="audio.mp3" preload="auto"></audio>
 
     <script src="script.js" defer></script>
