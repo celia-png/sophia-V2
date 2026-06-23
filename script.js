@@ -1,5 +1,84 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Observer de Interseção para revelar elementos ao fazer scroll
+    
+    // 1. Lógica do Áudio / Voz da SophIA
+    const btnVoice = document.getElementById('btn-voice');
+    const audioElement = document.getElementById('sophia-audio');
+    let isPlaying = false;
+
+    btnVoice.addEventListener('click', () => {
+        if (isPlaying) return; // Evita cliques múltiplos
+
+        // Efeito visual no botão
+        btnVoice.classList.add('playing');
+        btnVoice.innerHTML = '<span class="icon">🔊</span> Reproduzindo...';
+        isPlaying = true;
+
+        // Tenta tocar o arquivo de áudio. Se não existir, usa a Síntese de Voz do Navegador como fallback
+        audioElement.play().catch(error => {
+            console.log('Arquivo de áudio não encontrado. Usando Web Speech API como fallback.');
+            
+            const speech = new SpeechSynthesisUtterance("Olá, candidato. Eu sou a Sofia. Vou seguir com a sua entrevista.");
+            speech.lang = 'pt-BR';
+            speech.rate = 1.0;
+            
+            speech.onend = resetVoiceButton;
+            window.speechSynthesis.speak(speech);
+        });
+
+        audioElement.onended = resetVoiceButton;
+    });
+
+    function resetVoiceButton() {
+        btnVoice.classList.remove('playing');
+        btnVoice.innerHTML = '<span class="icon">🔊</span> Entrevistas por voz';
+        isPlaying = false;
+    }
+
+    // 2. Lógica do Carrossel de Depoimentos
+    const track = document.getElementById('carousel-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    let currentIndex = 0;
+
+    function getCardsVisible() {
+        if (window.innerWidth >= 1024) return 3;
+        if (window.innerWidth >= 768) return 2;
+        return 1;
+    }
+
+    function updateCarousel() {
+        const cardsVisible = getCardsVisible();
+        const totalCards = document.querySelectorAll('.testimonial-card').length;
+        const maxIndex = Math.max(0, totalCards - cardsVisible);
+
+        // Garante que o index não passe do limite ao redimensionar a tela
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+        const cardWidth = document.querySelector('.testimonial-card').offsetWidth;
+        const gap = parseFloat(window.getComputedStyle(track).gap) || 0;
+        
+        const moveAmount = currentIndex * (cardWidth + gap);
+        track.style.transform = `translateX(-${moveAmount}px)`;
+    }
+
+    nextBtn.addEventListener('click', () => {
+        const maxIndex = document.querySelectorAll('.testimonial-card').length - getCardsVisible();
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+
+    prevBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+
+    window.addEventListener('resize', updateCarousel);
+
+    // 3. Lógica de ScrollReveal (Intersection Observer)
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -10,12 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                // Para a observação após a primeira animação para melhorar performance
-                observer.unobserve(entry.target); 
+                observer.unobserve(entry.target);
             }
         });
     }, observerOptions);
 
-    const fadeElements = document.querySelectorAll('.fade-in');
-    fadeElements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 });
